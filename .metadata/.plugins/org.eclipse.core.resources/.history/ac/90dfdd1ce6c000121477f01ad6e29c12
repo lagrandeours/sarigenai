@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>アンケートフォーム</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"
+	media="screen,tv" />
+</head>
+<body>
+	<div id="box">
+		<div id="header">
+			<h1>PHP for Web Designer</h1>
+		</div>
+		<ul id="menu" class="clearfix">
+			<li class="active"><a href="question1.php">アンケート</a></li>
+			<li><a href="form1.php">メールフォーム</a></li>
+			<li><a href="webapi/">グルメMAP</a></li>
+		</ul>
+		<div id="main">
+			<h2>アンケートフォーム</h2>
+			<?php
+			$error = 0;
+
+			// 性別の入力チェック
+			if (isset($_POST['gender'])) {
+				$gender = $_POST['gender'];
+
+				if (ctype_digit($gender)) {
+					if ($gender == 1){
+						$gendername = '男性';
+					} elseif(gender == 2) {
+						$gendername = '女性';
+					} else {
+						$error = 1;
+					}
+				} else { // ctype_digit()関数で変数が数字ではなかった場合
+					$error = 1;
+				}
+			} else { // isset()で変数が未定義だった場合
+				$error = 1;
+			}
+
+			//年齢の入力チェック
+			if (isset($_POST['age'])) {
+				$age = $_POST['age'];
+
+				if (ctype_digit($age)){	//入力が数字のみか？
+					//	1より小さい、または、5より大きいか？
+					if($age < 1 || $age > 5) {
+						$error = 1;	//入力エラー
+					}
+				} else {	// ctype_digit()関数で変数が数字ではなかった場合
+			$error = 1;
+		}
+			} else {	// isset()で変数が未定義だった場合
+		$error = 1;	//入力エラー
+	}
+
+	//趣味の入力チェック
+	if (isset($_POST['hobby'])) {
+		$hobby = $_POST['hobby'];
+
+		if (is_array($hobby)) {	// 配列か？
+			foreach ($hobby as $value) {
+				if (ctype_digit($value)) {
+					// 1より小さい、または、5より大きいか?
+					if ($value < 1 || $value > 5) {
+						$error = 1; // 入力エラー
+					}
+				} else {	// ctype_digit()関数で変数が数字ではなかった場合
+					$error = 1;
+				}
+			}
+		} else {	// is_array()関数で変数が入れるではなかった場合
+			$error = 1;	// 入力エラー
+		}
+	} else { // isset()で変数が未定義だった場合
+		$error = 1; // 入力エラー
+	}
+
+	//入力エラーがない場合の結果表示
+	if ($error == 0) {
+		//　アンケートの結果表示と結果の保存処理
+	} else {
+		//入力エラーがある場合のエラー表示
+		echo '<p class="app_msg">';
+		echo '戻ってアンケートの項目すべてにお答えください。';
+		echo '</p>';
+	}
+	?>
+		</div>
+		<p class="copy">&copy; 2010 PHP for Web Designer. All rights reserved.
+		</p>
+	</div>
+</body>
+</html>

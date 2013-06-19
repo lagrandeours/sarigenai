@@ -1,0 +1,290 @@
+/* ---- reset CSS ---- */
+html,body,div,h1,dl,dd,dt,p,a,span,ul,li,label,input,select,fieldset{
+  margin : 0px;
+  padding : 0px;
+  font-family : Helvetica, "MS Pゴシック", "メイリオ", Osaka, "ヒラギノ角ゴ Pro W3", serif;
+  color : #333;
+}
+/* ---- reset CSS end ---- */
+
+/* --clearfix -- */
+.clearfix:after{
+	content : '';
+	display : block;
+	height : 0;
+	clear : both;
+	visibility : hidden;
+}
+* html .clearfix{
+	clear : both;
+	overflow : hidden;
+}
+*:first-child+html .clearfix{
+	clear : both;
+	overflow : hidden;
+}
+/* holly hack*/
+ /*\*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+
+/* -- clearfix end --*/
+
+/* ---- boxmodel ---- */
+body{
+  background : #0cc6ef;
+}
+div#box{
+  width : 950px;
+  background : url(../images/header-back.png) top center no-repeat;
+  margin : 0 auto;
+}
+* html div#box{
+  background-image : url(../images/header-back.jpg);
+}
+div#header{
+  width : 700px;
+  height : 130px;
+  position : relative;
+  margin : 0 auto;
+}
+div#main{
+  width : 680px;
+  border : solid 10px #f1f1f1;
+  background : #fff;
+  padding-bottom : 20px;
+  margin : 0 auto;
+}
+
+/* ---- boxmodel end ---- */
+
+/* ---- stlye of header ---- */
+div#header h1{
+  position : absolute;
+  background : url(../images/php_logo.png) center center no-repeat;
+  width : 274px;
+  height : 118px;
+  top : 10px;
+  left : 5px;
+  text-indent : -9999px;
+}
+* html div#header h1{
+  background : none;
+  filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/php_logo.png" sizingmethod="scale");
+}
+/* ---- end ---- */
+
+/* ---- style of menu ---- */
+
+ul#menu{
+  width : 700px;
+  background : #333;
+  list-style : none outside;
+  margin : 0 auto;
+}
+ul#menu li{
+  float : left;
+  display : inline;
+  text-align : center;
+}
+ul#menu li.active a{
+  background : #e33258;
+}
+ul#menu li a{
+  display : block;;
+  padding : 5px 20px;
+  color : #fff;
+  background : #333;
+  text-decoration : none;
+}
+ul#menu li a:hover{
+  background : #e33258;
+}
+
+/* ---- style of main content ---- */
+div#main h2{
+  background : #fff url(../images/qa.jpg) center center no-repeat;
+  width : 363px;
+  height : 57px;
+  margin : 8px 0 0 20px;
+  text-indent : -9999px;
+}
+div#main h2.mail-bar{
+  background : #fff url(../images/mail.jpg) center center no-repeat;
+  width : 363px;
+  height : 57px;
+  margin : 5px 0 0 20px;
+  text-indent : -9999px;
+}
+div#main h2.map-bar{
+  background : #fff url(../images/map.jpg) center center no-repeat;
+  width : 363px;
+  height : 57px;
+  margin : 5px 0 0 20px;
+  text-indent : -9999px;
+}
+div#main ul.error{
+  border : solid 1px #c00;
+  -moz-border-radius : 5px 5px 5px 5px;
+  -webkit-border-radius : 5px 5px 5px 5px;
+  padding : 0 10px 5px 10px;
+  width : 70%;
+  margin : 8px auto 0 auto;
+  padding-top : 2px;
+}
+div#main ul.error li{
+  margin-top : 2px;
+  list-style : none outside;
+  font-size : 12px;
+  color : #f00;
+  background : url(../images/notice.gif) 0px 0px no-repeat;
+  height : 22px;
+  padding-left : 30px;
+  padding-top : 3px;
+}
+div#main p.app_msg{
+  text-align : center;
+  border-bottom : solid 1px #ccc;
+  padding : 5px 0;
+  margin : 10px 20px 10px 20px;
+}
+
+div#main dl{
+  width : 300px;
+  margin : 0 auto;
+  font-size : 1.2em;
+}
+div#main dl.mailform{
+  width: 500px;
+}
+div#main dl dt{
+  float : left;
+  width : 5em;
+  padding : 10px;
+  padding-top : 0px;
+  clear : both;
+}
+div#main dl dd{
+  float : right;
+  display : inline;
+  padding : 10px;
+  padding-top : 0px;
+  margin-left : 20px;
+}
+div#main dl dd.hobby-area{
+	margin-left : 0;
+	width : 129px;
+
+}
+div#main dl.mailform dd{
+  margin-left :5px;
+}
+div#main dl.mailform dd.captcha_view{
+	width : 340px;
+}
+div#main dl.mailform dd img.captcha{
+	float:left;
+	display : inline;
+	margin-right : 5px;
+}
+div#main dl.mailform dd span{
+	font-size : 0.8em;
+}
+div#main dl.mailform dd label.clearfix input{
+	width : 150px;
+}
+div#main dl dd input{
+  margin: 0 5px 0 8px;
+}
+div#main dl.mailform dd input{
+  width : 300px;
+  margin : 0px;
+}
+div#main dl.mailform dd textarea{
+  width : 300px;
+  height : 75px;
+}
+div#main dl dd.hobby-area label{
+  display : block;
+  margin-bottom : 5px;
+}
+div#main p input{
+  background : url(../images/submit_btn.jpg) center center no-repeat;
+  width : 170px;
+  height : 41px;
+  border : none;
+  display : block;
+  margin : 20px auto 0 auto;
+  text-align : center;
+  cursor : pointer;
+  font-size : 1.2em;
+  color : #fff;
+}
+div#main p input:hover{
+  color : #333;
+}
+div#main div{
+  text-align :center;
+}
+div#main div form, div#main div form p, div#main div form p input{
+  display : inline;
+}
+* html div#main div form p input, *:first-child+html div#main div form p input{
+  display : inline-block;
+}
+div#main div form.spacer{
+  margin-left : 5px;
+}
+div#main fieldset{
+  margin : 5px 0 0 15px;
+  padding : 5px;
+  width : 340px;
+  text-align : center;
+  border : solid 1px #ccc;
+}
+div#main table.question{
+  border-collapse : collapse;
+  width : 650px;
+  margin : 5px auto 0 auto;
+}
+div#main table.question td{
+  font-size : 0.8em;
+  padding : 5px 0;
+  border-bottom : solid 1px #ccc;
+}
+div#main table.question th{
+  background : #ccc;
+  color : #666;
+  font-size : 0.9em;
+  border-left : solid 1px #fff;
+  border-right : solid 1px #fff;
+}
+div#main table.gourmet-map{
+  border-collapse : collapse;
+  width : 650px;
+  margin : 5px auto 0 auto;
+}
+div#main table.gourmet-map td{
+  font-size : 0.8em;
+  padding : 5px 0;
+  border-bottom : solid 1px #ccc;
+}
+div#main table.gourmet-map th{
+  background : #ccc;
+  color : #666;
+  font-size : 0.9em;
+  border-left : solid 1px #fff;
+  border-right : solid 1px #fff;
+}
+
+
+div#box p.copy{
+  border-top : solid 10px #333;
+  text-align : center;
+  color : #333;
+  padding-top : 5px;
+  width: 700px;
+  margin : 0 auto;
+}
+

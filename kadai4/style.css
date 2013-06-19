@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+div#conteiner	{
+	width: 900px;
+	margin: 0 auto
+}
+
+.kubun {
+	text-align: center;
+}

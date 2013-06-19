@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="text/css">
+<meta content="text/javascript">
+<title>アンケートフォーム</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen,tv">
+</head>
+<body>
+<div id="box">
+<div id="header">
+<h1>PHP for Web Designer</h1>
+</div>
+<ul id="menu" class="clearfix">
+	<li class="active"><a href="question1.php">アンケート</a></li>
+	<li><a href="form1.php">メールフォーム</a></li>
+	<li><a href="webapi/">グルメMAP</a></link>
+</ul>
+<div id="main">
+<h2>アンケートフォーム</h2>
+<form action="question2.php" method="post">
+	<dl class="clearfix">
+	<dt>性別は？</dt>
+	<dd>
+		<label><input type="radio" name="gender" value="1">男性</label>
+		<label><input type="radio" name="gender" value="2">女性</label>
+	</dd>
+	<dt>年齢は？</dt>
+	<dd>
+	<label>
+	<select name="age">
+		<option value="0" selected="selected">選択してください</option>
+		<option value="1">10代</option>
+		<option value="2">20代</option>
+		<option value="3">30代</option>
+		<option value="4">40代</option>
+		<option value="5">50代以上</option>
+	</select>
+	</label>
+	</dd>
+	<dt>趣味は？</dt>
+	<dd class="hobby-area">
+		<label><input type="checkbox" name="hobby[1]" value="1">音楽鑑賞</label>
+		<label><input type="checkbox" name="hobby[2]" value="2">映画鑑賞</label>
+		<label><input type="checkbox" name="hobby[3]" value="3">ドライブ</label>
+		<label><input type="checkbox" name="hobby[4]" value="4">旅行</label>
+		<label><input type="checkbox" name="hobby[5]" value="5">その他</label>
+	</dd>
+	</dl>
+	<p>
+	<input type="submit" value="投票する">
+	</p>
+</form>
+</div>
+<p class="copy">
+&copy; 2010 PHP for Web Designer. All rights reserved.
+</p>
+</div>
+</body>
+</html>
